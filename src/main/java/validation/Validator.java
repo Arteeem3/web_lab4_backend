@@ -7,7 +7,7 @@ public class Validator {
     private double x, y, r;
 
     private boolean validateX() {
-        return x >= -3 && x <= 5;
+        return x >= -5 && x <= 3;
     }
 
     private boolean validateY() {
@@ -15,7 +15,7 @@ public class Validator {
     }
 
     private boolean validateR() {
-        return r >= 0.1 && r <= 5;
+        return r >= 0.1 && r <= 3;
     }
 
     public boolean validateDot() {

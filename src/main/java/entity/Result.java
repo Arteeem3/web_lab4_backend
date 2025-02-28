@@ -53,9 +53,10 @@ public class Result implements Serializable {
     }
 
     private boolean checkHit(double x, double y, double r) {
-        boolean circle = (x <= 0 && y >= 0 && x*x + y*y <= r*r / 4);
-        boolean rectangle = (x >= 0 && y >= 0 && x <= r && y <= r);
-        boolean triangle = (x >= 0 && y <= 0 && y >= -x - r);
+        boolean circle = (x <= 0 && y >= 0) && (x*x + y*y <= r*r/4);
+        boolean rectangle = (x >= 0 && x <= r/2) && (y <= 0 && y >= -r);
+        boolean triangle = (x >= 0 && y >= 0) && (y <= -2*x + r);
+
         return circle || rectangle || triangle;
     }
 
